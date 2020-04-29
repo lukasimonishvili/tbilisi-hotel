@@ -118,16 +118,22 @@ const ListItem = styled.li`
 const Header = (props) => {
   const [visible, setVisible] = useState(false);
 
+  function hideNavigation() {
+    document.body.style.overflow = "auto";
+    setVisible(false);
+  }
+
+  function showNavigation() {
+    document.body.style.overflow = "hidden";
+    setVisible(true);
+  }
+
   return (
     <React.Fragment>
       <Container type="header">
         <Wrapper>
           <LeftWrapper>
-            <Burger
-              onClick={() => {
-                setVisible(true);
-              }}
-            >
+            <Burger onClick={showNavigation}>
               <BurgerItem size="large" />
               <BurgerItem size="small" />
               <BurgerItem size="large" />
@@ -143,62 +149,30 @@ const Header = (props) => {
       </Container>
       <Navigation visible={visible}>
         <Container>
-          <Close
-            onClick={() => {
-              setVisible(false);
-            }}
-          >
+          <Close onClick={hideNavigation}>
             <div></div>
             <div></div>
           </Close>
           <List>
-            <ListItem
-              onClick={() => {
-                setVisible(false);
-              }}
-            >
+            <ListItem onClick={hideNavigation}>
               <Link to="/about">About us</Link>
             </ListItem>
-            <ListItem
-              onClick={() => {
-                setVisible(false);
-              }}
-            >
+            <ListItem onClick={hideNavigation}>
               <Link to="/gallery">Gallery</Link>
             </ListItem>
-            <ListItem
-              onClick={() => {
-                setVisible(false);
-              }}
-            >
-              <Link to="/Rooms">Rooms</Link>
+            <ListItem onClick={hideNavigation}>
+              <Link to="/rooms">Rooms</Link>
             </ListItem>
-            <ListItem
-              onClick={() => {
-                setVisible(false);
-              }}
-            >
-              <Link to="/Restaurants">Restaurants</Link>
+            <ListItem onClick={hideNavigation}>
+              <Link to="/restaurants">Restaurants</Link>
             </ListItem>
-            <ListItem
-              onClick={() => {
-                setVisible(false);
-              }}
-            >
-              <Link to="/wine">Wine Garage</Link>
+            <ListItem onClick={hideNavigation}>
+              <Link to="/wines">Wine Garage</Link>
             </ListItem>
-            <ListItem
-              onClick={() => {
-                setVisible(false);
-              }}
-            >
+            <ListItem onClick={hideNavigation}>
               <Link to="/location">Location</Link>
             </ListItem>
-            <ListItem
-              onClick={() => {
-                setVisible(false);
-              }}
-            >
+            <ListItem onClick={hideNavigation}>
               <Link to="/contact">Contact</Link>
             </ListItem>
           </List>

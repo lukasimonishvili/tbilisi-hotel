@@ -13,3 +13,19 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Italiana";
+  src: url("../fonts/Italiana-Regular.woff2") format("woff2"),
+    url("../fonts/Italiana-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geometria";
+  src: url("../fonts/Geometria.woff2") format("woff2"),
+    url("../fonts/Geometria.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

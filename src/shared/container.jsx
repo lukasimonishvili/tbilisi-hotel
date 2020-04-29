@@ -12,6 +12,7 @@ const StyledContainer = styled.div`
     top: 37px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 20;
   `
       : `position: static`}
 

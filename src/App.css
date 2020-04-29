@@ -4,4 +4,5 @@
 html {
   font-size: 10px;
   font-family: "Playfair Display";
+  scroll-behavior: smooth;
 }

@@ -44,9 +44,8 @@ const FormInfo = styled.div`
 const TitleLight = styled.h4`
   font-size: 5.8rem;
   line-height: 8rem;
-  color: white;
+  color: #1d1111;
   font-weight: bold;
-  border-bottom: 1px solid white;
 `;
 
 const InfoList = styled.ul`
@@ -66,7 +65,7 @@ const Info = styled.li`
   & span {
     line-height: 5.256rem;
     font-size: 3rem;
-    color: white;
+    color: #1d1111;
     padding-left: 30px;
   }
 `;
@@ -213,11 +212,11 @@ const ContactPage = () => {
               </Info>
               <Info>
                 <img src={fax} alt="" />
-                <span>Num_-0 45543345</span>
+                <span>+995 032 2 33 04 05</span>
               </Info>
               <Info>
                 <img src={mail} alt="" />
-                <span>Ermalo_maghradze@gmail.com</span>
+                <span>JohnMaloy@tbilisee.ge</span>
               </Info>
             </InfoList>
             <Socials>

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import styled from "styled-components";
 import shortId from "shortid";
 import { Link } from "@reach/router";
 
+import HeaderTheme from "../contexts/headerContext";
 import Container from "../shared/container";
 import CoverImage from "../assets/img/about-cover.png";
 
@@ -187,8 +188,10 @@ const Rooms = () => {
     setRooms(result);
   }
 
+  const setTheme = useContext(HeaderTheme);
   useEffect(() => {
     getRooms();
+    setTheme("dark");
   }, []);
 
   return (
@@ -207,7 +210,7 @@ const Rooms = () => {
                   <p>{r.description}</p>
                   <div>
                     <span>{r.price + " $"}</span>
-                    <More to={`/room/${r.id}`}>SEE MORE</More>
+                    <More to={`/room/${r.title.toLowerCase()}`}>SEE MORE</More>
                   </div>
                 </RoomsInfo>
               </Room>

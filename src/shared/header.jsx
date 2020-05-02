@@ -5,6 +5,7 @@ import { Link } from "@reach/router";
 import Container from "./container";
 
 import LogoImage from "../assets/img/logo.svg";
+import LogoLight from "../assets/img/logo-light.svg";
 
 const Wrapper = styled.header`
   width: 100%;
@@ -26,10 +27,11 @@ const Burger = styled.div`
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  opacity: ${(props) => (props.visible ? "1" : "0")};
 `;
 
 const BurgerItem = styled.div`
-  background-color: black;
+  background-color: ${(props) => (props.theme === "light" ? "white" : "black")};
   width: ${(props) => (props.size === "large" ? "100%" : "21px")};
   height: 2px;
 `;
@@ -38,7 +40,7 @@ const Lang = styled.div`
   margin-left: 76px;
   font-size: 2rem;
   line-height: 2.7rem;
-  color: black;
+  color: ${(props) => (props.theme === "light" ? "white" : "black")};
   font-weight: bold;
   cursor: pointer;
 `;
@@ -51,8 +53,9 @@ const Logo = styled.img`
 
 const BookNow = styled.button`
   background-color: transparent;
-  border: 0.5px solid black;
-  color: black;
+  border: 0.5px solid
+    ${(props) => (props.theme === "light" ? "white" : "black")};
+  color: ${(props) => (props.theme === "light" ? "white" : "black")};
   font-weight: normal;
   padding: 0 23px;
   line-height: 4.4rem;
@@ -75,7 +78,6 @@ const Navigation = styled.div`
 const Close = styled.div`
   width: 40px;
   height: 40px;
-  margin-left: auto;
   margin-top: 90px;
   cursor: pointer;
 
@@ -133,18 +135,21 @@ const Header = (props) => {
       <Container type="header">
         <Wrapper>
           <LeftWrapper>
-            <Burger onClick={showNavigation}>
-              <BurgerItem size="large" />
-              <BurgerItem size="small" />
-              <BurgerItem size="large" />
-              <BurgerItem size="small" />
+            <Burger visible={!visible} onClick={showNavigation}>
+              <BurgerItem theme={props.theme} size="large" />
+              <BurgerItem theme={props.theme} size="small" />
+              <BurgerItem theme={props.theme} size="large" />
+              <BurgerItem theme={props.theme} size="small" />
             </Burger>
-            <Lang>EN</Lang>
+            <Lang theme={props.theme}>EN</Lang>
           </LeftWrapper>
           <Link to="/">
-            <Logo alt="" src={LogoImage} />
+            <Logo
+              alt=""
+              src={props.theme === "light" ? LogoLight : LogoImage}
+            />
           </Link>
-          <BookNow>BOOK NOW</BookNow>
+          <BookNow theme={props.theme}>BOOK NOW</BookNow>
         </Wrapper>
       </Container>
       <Navigation visible={visible}>

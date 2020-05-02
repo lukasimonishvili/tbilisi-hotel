@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
 import shortId from "shortid";
+import HeaderTheme from "../contexts/headerContext";
 
 import Container from "../shared/container";
 
@@ -85,7 +86,7 @@ const Gallery = () => {
 
   function getImages(page) {
     let result = [];
-    for (let i = 0; i < 11; i++) {
+    for (let i = 0; i < 10; i++) {
       switch (page) {
         case 1:
           result.push(require("../assets/img/gallery-1.png"));
@@ -110,10 +111,13 @@ const Gallery = () => {
     }
   }
 
+  const setTheme = useContext(HeaderTheme);
+
   useEffect(() => {
     getImages(1);
     setPageCount(3);
     setActivePage(1);
+    setTheme("dark");
   }, []);
 
   return (
@@ -127,20 +131,20 @@ const Gallery = () => {
             ) : (
               <React.Fragment></React.Fragment>
             )}
-            {images[1] ? (
-              <GalleryImage size="medium" image={images[1]} />
+            {images[3] ? (
+              <GalleryImage size="medium" image={images[3]} />
             ) : (
               <React.Fragment></React.Fragment>
             )}
-            {images[2] ? (
-              <GalleryImage size="xl" image={images[2]} />
+            {images[7] ? (
+              <GalleryImage size="xl" image={images[7]} />
             ) : (
               <React.Fragment></React.Fragment>
             )}
           </GalleryRow>
           <GalleryRow>
-            {images[3] ? (
-              <GalleryImage size="large" image={images[3]} />
+            {images[1] ? (
+              <GalleryImage size="large" image={images[1]} />
             ) : (
               <React.Fragment></React.Fragment>
             )}
@@ -149,25 +153,25 @@ const Gallery = () => {
             ) : (
               <React.Fragment></React.Fragment>
             )}
-            {images[5] ? (
-              <GalleryImage size="small" image={images[5]} />
+            {images[8] ? (
+              <GalleryImage size="small" image={images[8]} />
             ) : (
               <React.Fragment></React.Fragment>
             )}
           </GalleryRow>
           <GalleryRow>
+            {images[2] ? (
+              <GalleryImage size="medium" image={images[2]} />
+            ) : (
+              <React.Fragment></React.Fragment>
+            )}
+            {images[5] ? (
+              <GalleryImage size="medium" image={images[5]} />
+            ) : (
+              <React.Fragment></React.Fragment>
+            )}
             {images[6] ? (
-              <GalleryImage size="medium" image={images[6]} />
-            ) : (
-              <React.Fragment></React.Fragment>
-            )}
-            {images[7] ? (
-              <GalleryImage size="medium" image={images[7]} />
-            ) : (
-              <React.Fragment></React.Fragment>
-            )}
-            {images[8] ? (
-              <GalleryImage size="xs" image={images[8]} />
+              <GalleryImage size="xs" image={images[6]} />
             ) : (
               <React.Fragment></React.Fragment>
             )}

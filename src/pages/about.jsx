@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import styled from "styled-components";
+import HeaderTheme from "../contexts/headerContext";
 
 import Container from "../shared/container";
 import TextSpinner from "../shared/textSpinner";
@@ -155,6 +156,12 @@ const Shaper = styled.div`
 `;
 
 const AboutPage = () => {
+  const setTheme = useContext(HeaderTheme);
+
+  useEffect(() => {
+    setTheme("dark");
+  }, []);
+
   return (
     <Wrapper>
       <Container>

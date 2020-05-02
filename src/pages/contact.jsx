@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import styled from "styled-components";
 import Container from "../shared/container";
 import TextSpinner from "../shared/textSpinner";
+import HeaderTheme from "../contexts/headerContext";
 
 import pin from "../assets/img/map-pin.svg";
 import phone from "../assets/img/phone.svg";
@@ -177,6 +178,12 @@ const SpinnerWrapper = styled.div`
 `;
 
 const ContactPage = () => {
+  const setTheme = useContext(HeaderTheme);
+
+  useEffect(() => {
+    setTheme("dark");
+  }, []);
+
   function onSubmit() {
     let inps = document.getElementById("inps");
     let payload = {};

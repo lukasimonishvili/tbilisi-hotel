@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
 import shortId from "shortid";
 
 import Container from "../shared/container";
+import HeaderTheme from "../contexts/headerContext";
 
 import shapeImage from "../assets/img/about-shape.svg";
 import leftArrowIcon from "../assets/img/p-arrow-left.svg";
@@ -345,10 +346,12 @@ const Wines = () => {
     allowAction = true;
   }
 
+  const setTheme = useContext(HeaderTheme);
   useEffect(() => {
     getWineList(1);
     setPageCount(3);
     getSliderData();
+    setTheme("dark");
   }, []);
 
   return (

@@ -23,7 +23,11 @@ const StyledContainer = styled.div`
 `;
 
 const Container = (props) => {
-  return <StyledContainer type={props.type}>{props.children}</StyledContainer>;
+  return (
+    <StyledContainer style={props.style ? props.style : {}} type={props.type}>
+      {props.children}
+    </StyledContainer>
+  );
 };
 
 export default Container;

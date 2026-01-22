@@ -302,7 +302,7 @@ const OneRoom = (props) => {
   useEffect(() => {
     getData();
     setTheme("dark");
-  }, []);
+  }, [setTheme]);
 
   return (
     //   empty divs are important!!!!

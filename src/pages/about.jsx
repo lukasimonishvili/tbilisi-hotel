@@ -160,7 +160,7 @@ const AboutPage = () => {
 
   useEffect(() => {
     setTheme("dark");
-  }, []);
+  }, [setTheme]);
 
   return (
     <Wrapper>

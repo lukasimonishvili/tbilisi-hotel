@@ -352,7 +352,7 @@ const Wines = () => {
     setPageCount(3);
     getSliderData();
     setTheme("dark");
-  }, []);
+  }, [setTheme]);
 
   return (
     <Wrapper>

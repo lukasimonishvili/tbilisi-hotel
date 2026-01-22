@@ -192,7 +192,7 @@ const Rooms = () => {
   useEffect(() => {
     getRooms();
     setTheme("dark");
-  }, []);
+  }, [setTheme]);
 
   return (
     <Wrapper>

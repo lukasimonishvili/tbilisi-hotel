@@ -97,6 +97,9 @@ const Gallery = () => {
         case 3:
           result.push(require("../assets/img/gallery-3.png"));
           break;
+        default:
+          result.push(require("../assets/img/gallery-1.png"));
+          break;
       }
     }
     setImages(result);
@@ -118,7 +121,7 @@ const Gallery = () => {
     setPageCount(3);
     setActivePage(1);
     setTheme("dark");
-  }, []);
+  }, [setTheme]);
 
   return (
     <Wrapper>

@@ -329,7 +329,7 @@ const Restaurants = () => {
   useEffect(() => {
     setTheme("light");
     getData();
-  }, []);
+  }, [setTheme]);
 
   return load ? (
     <div>Loading</div>

@@ -222,7 +222,7 @@ const Locations = () => {
   useEffect(() => {
     getData();
     setTheme("dark");
-  }, []);
+  }, [setTheme]);
 
   return (
     <Wrapper>

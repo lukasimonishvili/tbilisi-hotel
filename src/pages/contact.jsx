@@ -182,7 +182,7 @@ const ContactPage = () => {
 
   useEffect(() => {
     setTheme("dark");
-  }, []);
+  }, [setTheme]);
 
   function onSubmit() {
     let inps = document.getElementById("inps");

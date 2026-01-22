@@ -167,7 +167,7 @@ const Rooms = (props) => {
       });
     }
     setData(result);
-  }, []);
+  }, [props.data]);
 
   function changeType(type) {
     setType(type);

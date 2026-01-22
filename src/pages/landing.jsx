@@ -196,7 +196,7 @@ const Landing = () => {
   useEffect(() => {
     setTheme("light");
     getData();
-  }, []);
+  }, [setTheme]);
 
   function changeWallSlide(i) {
     setActiveWallSlideIndex(i);
